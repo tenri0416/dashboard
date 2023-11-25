@@ -9,3 +9,8 @@ RUN apt-get update && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
   docker-php-ext-install intl pdo_mysql zip bcmath
+
+
+  # Laravel Sanctum のインストール
+WORKDIR /var/www/html
+RUN composer require laravel/sanctum
