@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LaungtherComedyImagesController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('sample', function () {
-    return response()->json('NO', 300);
+    $user = User::all();
+    return response()->json($user, 200);
 });
+//会員登録
+// Route::post('register', RegisterController::class);
+
+// ボケ画像取得
+Route::get('comedyimages', LaungtherComedyImagesController::class);

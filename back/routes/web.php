@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Laughter\UploadController;
+use App\Http\Controllers\Laughter\UploadViewController;
+use App\Http\Controllers\Laungther\StartViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('upload', UploadViewController::class)->name('upload');
+Route::post('upload', UploadController::class)->name('upload');
+
+// // ゲームスタート
+// Route::get('start', StartViewController::class)->name('start');
